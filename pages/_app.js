@@ -1,13 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`;
-
 const theme = {
   colors: {
     // Primary
@@ -18,7 +10,7 @@ const theme = {
     ctaText: 'hsl(226, 100%, 87%)',
 
     // Neutral
-    cardBg: 'hsl (0, 0%, 100%)',
+    cardBg: '#ffffff',
     mainBg: 'hsl(230, 100%, 99%)',
     sliderEmpty: 'hsl(224, 65%, 95%)',
     toggleBg: 'hsl(223, 50%, 87%)',
@@ -37,3 +29,36 @@ export default function App({ Component, pageProps }) {
     </>
   );
 }
+
+const GlobalStyle = createGlobalStyle`
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color:  #f1f5fe;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*, *::before, *::after  {
+  box-sizing: border-box;
+}
+`;
