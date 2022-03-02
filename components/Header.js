@@ -19,6 +19,7 @@ const StyledHeader = styled.header`
 
 const Title = styled.h1`
   font-size: 2rem;
+  color: ${(props) => props.theme.colors.ctaBg};
 `;
 
 const Para = styled.p`

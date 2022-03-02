@@ -37,7 +37,11 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background-color:  #f1f5fe;
+    font-weight: 600;
+    color: hsl(225, 20%, 60%);
+    background-color:  hsl(230, 100%, 99%);
+    background-color:  lightblue;
+    /* REMOVE THIS */
 }
 
 html {
@@ -51,6 +55,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 * {
