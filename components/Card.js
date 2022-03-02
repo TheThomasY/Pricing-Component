@@ -1,5 +1,8 @@
 import React from 'react';
 
+// * Components
+import Slider from './Slider';
+
 // * Styled Components
 import styled from 'styled-components';
 
@@ -13,7 +16,7 @@ export default function Card() {
   return (
     <StyledCard>
       <ViewCount>{views} Page Views</ViewCount>
-      <Bar></Bar>
+      <Slider />
       <Price>£{price} /month</Price>
       <BillingRow>
         <p>Monthly Billing</p>
@@ -57,14 +60,6 @@ const ViewCount = styled.p`
   margin-top: 3.5rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-`;
-
-const Bar = styled.div`
-  margin-top: 4rem;
-  width: 85%;
-  height: 1rem;
-  border-radius: 1rem;
-  background-color: ${({ theme }) => theme.colors.sliderEmpty}; ;
 `;
 
 const Price = styled.p`

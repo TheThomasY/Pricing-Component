@@ -1,4 +1,6 @@
 import Head from 'next/head';
+
+// * Styled Components
 import styled from 'styled-components';
 
 // * Components

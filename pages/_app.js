@@ -1,3 +1,5 @@
+import '../styles/globals.css';
+
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 const theme = {
