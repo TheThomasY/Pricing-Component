@@ -39,6 +39,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-weight: 600;
     color: hsl(225, 20%, 60%);
     background-color:  hsl(230, 100%, 99%);

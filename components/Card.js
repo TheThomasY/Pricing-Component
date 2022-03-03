@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // * Components
 import Slider from './Slider';
@@ -10,14 +10,17 @@ import styled from 'styled-components';
 import { TiTick } from 'react-icons/ti';
 
 export default function Card() {
+  const [price, setPrice] = useState('16.00');
+
   let views = '100k';
-  let price = '16.00';
 
   return (
     <StyledCard>
       <ViewCount>{views} Page Views</ViewCount>
       <Slider />
-      <Price>£{price} /month</Price>
+      <Price>
+        <PriceNumber>£{price}</PriceNumber> /month
+      </Price>
       <BillingRow>
         <p>Monthly Billing</p>
         <div>Tog</div>
@@ -66,10 +69,15 @@ const Price = styled.p`
   margin-top: 4rem;
 `;
 
+const PriceNumber = styled.span`
+  color: ${(props) => props.theme.colors.ctaBg};
+  font-size: 3.2rem;
+  font-weight: 800;
+`;
+
 const BillingRow = styled.div`
-  width: 100%;
+  width: 80%;
   margin-top: 4rem;
-  margin-right: 1rem;
   padding-bottom: 4rem;
   border-bottom: 2px solid ${({ theme }) => theme.colors.sliderEmpty};
   display: flex;
