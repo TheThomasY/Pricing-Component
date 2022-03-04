@@ -10,7 +10,7 @@ import Card from '../components/Card';
 // * sc - styled component
 // * scpt - use props.theme
 
-export default function Home(props) {
+export default function Home() {
   return (
     <Wrapper>
       <Head>
