@@ -10,8 +10,8 @@ import styled from 'styled-components';
 import { TiTick } from 'react-icons/ti';
 
 export default function Card() {
-  const [views, setViews] = useState('100');
-  const [price, setPrice] = useState('16.00');
+  const [views, setViews] = useState('100K');
+  const [price, setPrice] = useState(16);
 
   const updateViewsAndPrice = ([views, price]) => {
     setViews(views);
@@ -23,7 +23,7 @@ export default function Card() {
       <ViewCount>{views} Page Views</ViewCount>
       <Slider updateViewsAndPrice={updateViewsAndPrice} />
       <Price>
-        <PriceNumber>£{price}</PriceNumber> /month
+        <PriceNumber>£{price}.00</PriceNumber> /month
       </Price>
       <BillingRow>
         <p>Monthly Billing</p>
