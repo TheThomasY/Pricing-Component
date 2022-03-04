@@ -31,7 +31,10 @@ export default function Card() {
       <ViewCount>{views} Page Views</ViewCount>
       <Slider updateViewsAndPrice={updateViewsAndPrice} />
       <Price>
-        <PriceNumber>£{price}.00</PriceNumber> /{billing}
+        <PriceNumber>
+          £{billing === 'month' ? price : price / 0.25}.00
+        </PriceNumber>{' '}
+        /{billing}
       </Price>
       <BillingRow updateBillingType={updateBillingType} />
       <CardBottom>
