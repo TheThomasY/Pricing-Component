@@ -26,5 +26,6 @@ export default function Home() {
 
 const Wrapper = styled.div`
   width: 88%;
+  max-width: 54rem;
   margin-inline: auto;
 `;
