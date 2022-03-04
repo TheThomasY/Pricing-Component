@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // * Components
 import Slider from './Slider';
+import BillingRow from './BillingRow';
 
 // * Styled Components
 import styled from 'styled-components';
@@ -12,10 +13,17 @@ import { TiTick } from 'react-icons/ti';
 export default function Card() {
   const [views, setViews] = useState('100K');
   const [price, setPrice] = useState(16);
+  const [billing, setBilling] = useState('month');
 
   const updateViewsAndPrice = ([views, price]) => {
     setViews(views);
     setPrice(price);
+  };
+
+  const updateBillingType = () => {
+    setBilling((prevBilling) => {
+      return prevBilling === 'month' ? 'year' : 'month';
+    });
   };
 
   return (
@@ -23,14 +31,12 @@ export default function Card() {
       <ViewCount>{views} Page Views</ViewCount>
       <Slider updateViewsAndPrice={updateViewsAndPrice} />
       <Price>
-        <PriceNumber>£{price}.00</PriceNumber> /month
+        <PriceNumber>
+          £{billing === 'month' ? price : price / 0.25}.00
+        </PriceNumber>{' '}
+        /{billing}
       </Price>
-      <BillingRow>
-        <p>Monthly Billing</p>
-        <div>Tog</div>
-        <p>Yearly Billing</p>
-        <p>25%</p>
-      </BillingRow>
+      <BillingRow updateBillingType={updateBillingType} />
       <CardBottom>
         <ul>
           <ListItem>
@@ -78,16 +84,6 @@ const PriceNumber = styled.span`
   color: ${(props) => props.theme.colors.ctaBg};
   font-size: 3.2rem;
   font-weight: 800;
-`;
-
-const BillingRow = styled.div`
-  width: 80%;
-  margin-top: 4rem;
-  padding-bottom: 4rem;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.sliderEmpty};
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
 `;
 
 const CardBottom = styled.div`
