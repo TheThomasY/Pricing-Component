@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // * Components
 import Slider from './Slider';
+import BillingRow from './BillingRow';
 
 // * Styled Components
 import styled from 'styled-components';
@@ -25,12 +26,7 @@ export default function Card() {
       <Price>
         <PriceNumber>£{price}.00</PriceNumber> /month
       </Price>
-      <BillingRow>
-        <p>Monthly Billing</p>
-        <div>Tog</div>
-        <p>Yearly Billing</p>
-        <p>25%</p>
-      </BillingRow>
+      <BillingRow />
       <CardBottom>
         <ul>
           <ListItem>
@@ -78,16 +74,6 @@ const PriceNumber = styled.span`
   color: ${(props) => props.theme.colors.ctaBg};
   font-size: 3.2rem;
   font-weight: 800;
-`;
-
-const BillingRow = styled.div`
-  width: 80%;
-  margin-top: 4rem;
-  padding-bottom: 4rem;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.sliderEmpty};
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
 `;
 
 const CardBottom = styled.div`
