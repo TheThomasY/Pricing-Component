@@ -16,20 +16,21 @@ export default function BillingRow(props) {
         <CheckBoxLabel htmlFor='checkbox' />
       </CheckBoxWrapper>
       <p>Yearly Billing</p>
-      <p>25%</p>
+      <Discount>-25%</Discount>
     </StyledBillingRow>
   );
 }
 
 const StyledBillingRow = styled.div`
-  width: 80%;
+  width: 90%;
   margin-top: 4rem;
   padding-bottom: 4rem;
   border-bottom: 2px solid ${({ theme }) => theme.colors.sliderEmpty};
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  font-size: 1.2rem;
 `;
 
 const CheckBoxWrapper = styled.div`
@@ -40,7 +41,7 @@ const CheckBoxLabel = styled.label`
   position: absolute;
   top: 0.3rem;
   left: 0;
-  width: 4.4rem;
+  width: 4.2rem;
   height: 2.2rem;
   border-radius: 15px;
   background: ${({ theme }) => theme.colors.toggleBg};
@@ -71,8 +72,15 @@ const CheckBox = styled.input`
       border-radius: 50%;
       width: 1.4rem;
       height: 1.4rem;
-      margin-left: 2.7rem;
+      margin-left: 2.4rem;
       transition: 0.2s;
     }
   }
+`;
+
+const Discount = styled.p`
+  padding: 0.2rem 0.75rem;
+  border-radius: 1.5rem;
+  color: ${({ theme }) => theme.colors.discountText};
+  background-color: ${({ theme }) => theme.colors.discountBg}; ;
 `;
