@@ -7,21 +7,29 @@ import styled from 'styled-components';
 import ReactSlider from 'react-slider';
 
 export default function Slider(props) {
-  const sliderChangeHandler = (value, index) => {
-    props.updateViews(value);
+  const viewsAndPrice = {
+    1: ['10K', 8],
+    2: ['50K', 12],
+    3: ['100K', 16],
+    4: ['500K', 24],
+    5: ['1M', 36],
+  };
+
+  const sliderChangeHandler = (value) => {
+    props.updateViewsAndPrice(viewsAndPrice[value]);
   };
 
   return (
     <Bar>
       <StyledSlider
-        min={10}
-        max={1000}
-        defaultValue={100}
+        min={1}
+        max={5}
+        defaultValue={3}
         renderTrack={(props, state) => (
           <StyledTrack {...props} index={state.index} />
         )}
         renderThumb={(props) => <StyledThumb {...props}></StyledThumb>}
-        onChange={(value, index) => sliderChangeHandler(value, index)}
+        onChange={(value) => sliderChangeHandler(value)}
       />
     </Bar>
   );

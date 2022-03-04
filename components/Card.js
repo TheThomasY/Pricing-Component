@@ -13,18 +13,15 @@ export default function Card() {
   const [views, setViews] = useState('100');
   const [price, setPrice] = useState('16.00');
 
-  const updateViews = (views) => {
+  const updateViewsAndPrice = ([views, price]) => {
     setViews(views);
+    setPrice(price);
   };
-
-  useEffect(() => {
-    setPrice;
-  }, [views]);
 
   return (
     <StyledCard>
-      <ViewCount>{views}k Page Views</ViewCount>
-      <Slider updateViews={updateViews} />
+      <ViewCount>{views} Page Views</ViewCount>
+      <Slider updateViewsAndPrice={updateViewsAndPrice} />
       <Price>
         <PriceNumber>£{price}</PriceNumber> /month
       </Price>
