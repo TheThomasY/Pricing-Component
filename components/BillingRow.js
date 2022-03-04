@@ -3,12 +3,16 @@ import React from 'react';
 // * Styled Components
 import styled from 'styled-components';
 
-export default function BillingRow() {
+export default function BillingRow(props) {
+  const updateBilling = () => {
+    props.updateBillingType();
+  };
+
   return (
     <StyledBillingRow>
       <p>Monthly Billing</p>
       <CheckBoxWrapper>
-        <CheckBox id='checkbox' type='checkbox' />
+        <CheckBox onChange={updateBilling} id='checkbox' type='checkbox' />
         <CheckBoxLabel htmlFor='checkbox' />
       </CheckBoxWrapper>
       <p>Yearly Billing</p>

@@ -13,10 +13,17 @@ import { TiTick } from 'react-icons/ti';
 export default function Card() {
   const [views, setViews] = useState('100K');
   const [price, setPrice] = useState(16);
+  const [billing, setBilling] = useState('month');
 
   const updateViewsAndPrice = ([views, price]) => {
     setViews(views);
     setPrice(price);
+  };
+
+  const updateBillingType = () => {
+    setBilling((prevBilling) => {
+      return prevBilling === 'month' ? 'year' : 'month';
+    });
   };
 
   return (
@@ -24,9 +31,9 @@ export default function Card() {
       <ViewCount>{views} Page Views</ViewCount>
       <Slider updateViewsAndPrice={updateViewsAndPrice} />
       <Price>
-        <PriceNumber>£{price}.00</PriceNumber> /month
+        <PriceNumber>£{price}.00</PriceNumber> /{billing}
       </Price>
-      <BillingRow />
+      <BillingRow updateBillingType={updateBillingType} />
       <CardBottom>
         <ul>
           <ListItem>
