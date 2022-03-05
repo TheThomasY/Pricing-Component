@@ -28,15 +28,17 @@ export default function Card() {
 
   return (
     <StyledCard>
-      <ViewCount>{views} Page Views</ViewCount>
-      <Slider updateViewsAndPrice={updateViewsAndPrice} />
-      <Price>
-        <PriceNumber>
-          £{billing === 'month' ? price : price / 0.25}.00
-        </PriceNumber>{' '}
-        /{billing}
-      </Price>
-      <BillingRow updateBillingType={updateBillingType} />
+      <CardTop>
+        <ViewCount>{views} Page Views</ViewCount>
+        <Slider updateViewsAndPrice={updateViewsAndPrice} />
+        <Price>
+          <PriceNumber>
+            £{billing === 'month' ? price : price / 0.25}.00
+          </PriceNumber>{' '}
+          /{billing}
+        </Price>
+        <BillingRow updateBillingType={updateBillingType} />
+      </CardTop>
       <CardBottom>
         <ul>
           <ListItem>
@@ -65,18 +67,37 @@ const StyledCard = styled.div`
   align-items: center;
   border-radius: 1rem;
   font-size: 1.3rem;
-
   background-color: ${(props) => props.theme.colors.cardBg};
+`;
+
+const CardTop = styled.div`
+  width: 100%;
+  display: grid;
+  place-items: center;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.sliderEmpty};
+
+  @media (min-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const ViewCount = styled.p`
   margin-top: 3.5rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+
+  @media (min-width: ${({ theme }) => theme.screens.sm}) {
+    margin-top: 6rem;
+  }
 `;
 
 const Price = styled.p`
   margin-top: 5rem;
+
+  @media (min-width: ${({ theme }) => theme.screens.sm}) {
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
 `;
 
 const PriceNumber = styled.span`
@@ -90,6 +111,12 @@ const CardBottom = styled.div`
   display: flex;
   flex-direction: column;
   padding: 2.5rem 0;
+
+  @media (min-width: ${({ theme }) => theme.screens.sm}) {
+    width: 82%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 const ListItem = styled.li`
@@ -97,6 +124,10 @@ const ListItem = styled.li`
   display: flex;
   justify-content: center;
   gap: 1rem;
+
+  @media (min-width: ${({ theme }) => theme.screens.sm}) {
+    justify-content: flex-start;
+  }
 `;
 
 const CTA = styled.button`
@@ -108,4 +139,8 @@ const CTA = styled.button`
   color: ${({ theme }) => theme.colors.ctaText};
   background-color: ${({ theme }) => theme.colors.ctaBg};
   cursor: pointer;
+
+  @media (min-width: ${({ theme }) => theme.screens.sm}) {
+    margin: 3rem 0;
+  }
 `;

@@ -19,6 +19,17 @@ const theme = {
     text: 'hsl(225, 20%, 60%)',
     ctaBg: 'hsl(227, 35%, 25%)',
   },
+
+  screens: {
+    sm: '640px',
+    // => @media (min-width: 640px) { ... }
+    md: '768px',
+    // => @media (min-width: 768px) { ... }
+    lg: '1024px',
+    // => @media (min-width: 1024px) { ... }
+    xl: '1280px',
+    // => @media (min-width: 1280px) { ... }
+  },
 };
 
 export default function App({ Component, pageProps }) {

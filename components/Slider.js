@@ -38,6 +38,11 @@ export default function Slider(props) {
 const Bar = styled.div`
   margin-top: 3rem;
   width: 85%;
+
+  @media (min-width: ${({ theme }) => theme.screens.sm}) {
+    grid-column: span 2;
+    margin-top: 3.5rem;
+  }
 `;
 
 const StyledSlider = styled(ReactSlider)`
