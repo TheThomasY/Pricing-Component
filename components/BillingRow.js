@@ -15,22 +15,25 @@ export default function BillingRow(props) {
         <CheckBox onChange={updateBilling} id='checkbox' type='checkbox' />
         <CheckBoxLabel htmlFor='checkbox' />
       </CheckBoxWrapper>
-      <p>Yearly Billing</p>
-      <Discount>-25%</Discount>
+      <YearlyBilling>Yearly Billing</YearlyBilling>
     </StyledBillingRow>
   );
 }
 
 const StyledBillingRow = styled.div`
   width: 90%;
-  margin-top: 4rem;
-  padding-bottom: 4rem;
-  border-bottom: 2px solid ${({ theme }) => theme.colors.sliderEmpty};
+  margin: 4rem 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 0.75rem;
   font-size: 1.2rem;
+
+  @media (min-width: ${({ theme }) => theme.screens.sm}) {
+    grid-column: span 2;
+    margin-top: 7rem;
+    gap: 1.5rem;
+  }
 `;
 
 const CheckBoxWrapper = styled.div`
@@ -78,7 +81,35 @@ const CheckBox = styled.input`
   }
 `;
 
+const YearlyBilling = styled.p`
+  position: relative;
+
+  &::after {
+    content: '-25%';
+    position: absolute;
+    top: 0;
+    left: 105%;
+    width: 4rem;
+    height: 2rem;
+    padding: 0.1rem 0.6rem;
+    border-radius: 1.5rem;
+    color: ${({ theme }) => theme.colors.discountText};
+    background-color: ${({ theme }) => theme.colors.discountBg};
+  }
+
+  @media (min-width: ${({ theme }) => theme.screens.sm}) {
+    &::after {
+      content: '-25% discount';
+      width: 10rem;
+    }
+  }
+`;
+
 const Discount = styled.p`
+  position: absolute;
+  left: 105%;
+  top: 0;
+  transform: translateY(-10%);
   padding: 0.2rem 0.75rem;
   border-radius: 1.5rem;
   color: ${({ theme }) => theme.colors.discountText};
