@@ -57,6 +57,31 @@ const StyledThumb = styled.div`
   cursor: grab;
   display: block;
   box-shadow: 0 0 2px 0 rgb(0 0 0 / 44%);
+  box-shadow: 0px 8px 15px 10px #b7fdf6;
+
+  &:before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -6px;
+    left: 5px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid #7bfdf3;
+  }
+
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -6px;
+    left: -10px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid #7bfdf3;
+  }
 `;
 
 const StyledTrack = styled.div`

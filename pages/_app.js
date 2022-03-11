@@ -54,16 +54,27 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 600;
     color: hsl(225, 20%, 60%);
     background-color:  hsl(230, 100%, 99%);
-    background-color:  lightblue;
-    /* REMOVE THIS */
 }
 
 html {
   font-size: 62.5%;
+  background-color: #ffffff;
 }
 
 body {
   font-size: 1.5rem;
+  background-color: transparent;
+}
+
+body::after {
+  content: "";
+  height: 40rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  border-bottom-left-radius: 200px;
+  background-color: #f1f5fe;
+  z-index: -1;
 }
 
 a {

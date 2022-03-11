@@ -61,13 +61,15 @@ export default function Card() {
 }
 
 const StyledCard = styled.div`
-  margin-top: 6rem;
+  margin-top: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1rem;
   font-size: 1.3rem;
   background-color: ${(props) => props.theme.colors.cardBg};
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 10px -1px,
+    rgba(0, 0, 0, 0.06) 0px 4px 10px -1px;
 `;
 
 const CardTop = styled.div`
@@ -139,6 +141,10 @@ const CTA = styled.button`
   color: ${({ theme }) => theme.colors.ctaText};
   background-color: ${({ theme }) => theme.colors.ctaBg};
   cursor: pointer;
+
+  &:hover {
+    color: #ffffff;
+  }
 
   @media (min-width: ${({ theme }) => theme.screens.sm}) {
     margin: 3rem 0;
