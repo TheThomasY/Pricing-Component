@@ -142,6 +142,10 @@ const CTA = styled.button`
   background-color: ${({ theme }) => theme.colors.ctaBg};
   cursor: pointer;
 
+  &:hover {
+    color: #ffffff;
+  }
+
   @media (min-width: ${({ theme }) => theme.screens.sm}) {
     margin: 3rem 0;
   }
