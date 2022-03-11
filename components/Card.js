@@ -68,6 +68,8 @@ const StyledCard = styled.div`
   border-radius: 1rem;
   font-size: 1.3rem;
   background-color: ${(props) => props.theme.colors.cardBg};
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 10px -1px,
+    rgba(0, 0, 0, 0.06) 0px 4px 10px -1px;
 `;
 
 const CardTop = styled.div`

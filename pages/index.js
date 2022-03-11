@@ -25,6 +25,7 @@ export default function Home() {
 }
 
 const Wrapper = styled.div`
+  padding-bottom: 5rem;
   width: 88%;
   max-width: 54rem;
   margin-inline: auto;
