@@ -61,7 +61,7 @@ export default function Card() {
 }
 
 const StyledCard = styled.div`
-  margin-top: 6rem;
+  margin-top: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
